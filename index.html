@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet/less" type="text/css" href="styles.less" />
+	<title>A to-do list</title>
+</head>
+<body>
+<div id="container">
+	<div id="header">A to-do list</div>
+	<div id="content">
+		<div id="act01"><input class="typeArea" type="text"><button class="done" type="button">Done</button><button class="delete" type="button">Delete</button>
+		</div>
+	</div>
+	<button id="newAct">新建活动</button>
+	<button id="save">保存</button>
+	<button id="clear">清空</button>
+</div>
+
+<!-- 主要脚本-->
+<script type="text/javascript" src="index.js"></script>
+<!-- less配置选项-->
+<script>
+  less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    rootpath: ":/a.com/"
+  };
+</script>
+<script src="less.min.js" type="text/javascript"></script>
+</body>
+</html>
