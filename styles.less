@@ -1,16 +1,60 @@
-@nice-blue:#5b83ad;
-@light-blue:@nice-blue+#111;
+//color
+@success-green:#5cb85c;
+@success-green-active:#449d44;
+@danger-red:#d9534f;
+@danger-red-active:#c9302c;
+@primary-blue:#337ab7;
+@primary-blue-active:#286090;
+//font
+@uni-font-size:24px;
+@header-font-size:40px;
 *{
-	font-size: 24px;
+	font-size: @uni-font-size;
 }
-
+button{
+	border-radius: 4px;
+}
 #container{
-	background-color:@light-blue;
+	background-color:#fff;
 }
 #header{
-	font-size: 40px;
+	font-size: @header-font-size;
 }
 .typeArea{
 	margin:10px;
-	width: 480px;
+	min-width: 400px;
+}
+#newAct,
+.done{
+	color: #fff;
+  	background-color: @success-green;
+  	border-color: #4cae4c;
+}
+#newAct:active,
+.done:active{
+	color: #fff;
+  	background-color: @success-green-active;
+  	border-color: #398439;
+}
+#clear,
+.delete{
+	color: #fff;
+  	background-color: @danger-red;
+  	border-color: #d43f3a;
+}
+#clear:active,
+.delete:active{
+	color: #fff;
+  	background-color: @danger-red-active;
+  	border-color: #ac2925;
+}
+#save{
+	color: #fff;
+  	background-color: @primary-blue;
+  	border-color: #2e6da4;
+}
+#save:hover{
+	color: #fff;
+  	background-color: @primary-blue-active;
+  	border-color: #204d74;
 }
