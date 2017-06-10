@@ -25,11 +25,11 @@ function addNewAct() {
 	typeArea.setAttribute("type", "text");
 	typeArea.setAttribute("class", "typeArea");
 	var button1 = document.createElement('button');
-	var txt1 = document.createTextNode('Done');
+	var txt1 = document.createTextNode('完成');
 	button1.setAttribute("type", "button");
 	button1.setAttribute("class", "done");
 	var button2 = document.createElement('button');
-	var txt2 = document.createTextNode('Delete');
+	var txt2 = document.createTextNode('删除');
 	button2.setAttribute("type", "button");
 	button2.setAttribute("class", "delete");
 	div.appendChild(typeArea);
@@ -74,7 +74,7 @@ function delAct() {
 }
 //完成按钮功能事件
 function doneAct() {
-	this.parentNode.firstChild.value = "done";
+	this.parentNode.firstChild.value = "完成咯";
 
 }
 

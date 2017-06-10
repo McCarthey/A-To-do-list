@@ -7,7 +7,7 @@
 @primary-blue-active:#286090;
 @second-blue:#3bb4f2;
 //font
-@uni-font-size:24px;
+@uni-font-size:18px;
 @header-font-size:40px;
 *{
 	font-size: @uni-font-size;
@@ -15,28 +15,32 @@
 button{
 	border-radius: 4px;
 	border: 1px solid transparent;
-	margin-right: 10px;
+	margin:0 10px 0 10px;
+	padding: 0 10px 0 10px;
 	cursor: pointer;
+	line-height: 2rem;
+	text-align: center;
 	transition: background-color .3s ease-out,border-color .3s ease-out;
 
 }
 input[type='text']{
 	border: 1px solid #eee;
+	padding: 0 10px 0 10px;
+	margin: 10px;
+	min-width: 400px;
+	line-height: 2rem;
 	transition: border-color .3s ease-out;
 }
 input[type='text']:focus{
 	border:1px solid @second-blue;
-	box-shadow: 1px 1px lighten(@second-blue,30%);
+	box-shadow: 1px 1px lighten(@second-blue,3
+		0%);
 }
 #container{
 	background-color:#fff;
 }
 #header{
 	font-size: @header-font-size;
-}
-.typeArea{
-	margin:10px;
-	min-width: 400px;
 }
 #newAct,
 .done{
@@ -45,7 +49,9 @@ input[type='text']:focus{
   	border-color: @success-green;
 }
 #newAct:active,
-.done:active{
+#newAct:hover,
+.done:active,
+.done:hover{
 	color: #fff;
   	background-color: @success-green-active;
   	border-color: @success-green-active;
@@ -57,7 +63,9 @@ input[type='text']:focus{
   	border-color: @danger-red;
 }
 #clear:active,
-.delete:active{
+#clear:hover,
+.delete:active,
+.delete:hover{
 	color: #fff;
   	background-color: @danger-red-active;
   	border-color: @danger-red-active;
@@ -67,7 +75,8 @@ input[type='text']:focus{
   	background-color: @primary-blue;
   	border-color: @primary-blue;
 }
-#save:hover{
+#save:hover,
+#save:active{
 	color: #fff;
   	background-color: @primary-blue-active;
   	border-color: @primary-blue-active;
