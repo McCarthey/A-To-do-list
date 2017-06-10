@@ -1,8 +1,8 @@
 //页面加载后读取localStorage中的信息
 window.onload = function() {
 	for (var i = 0; i < localStorage.length; i++) {
-		document.getElementsByTagName('input')[i].value = localStorage['act' + i];
 		addNewAct();
+		document.getElementsByTagName('input')[i].value = localStorage['act' + i];
 	}
 
 }
@@ -40,7 +40,7 @@ function addNewAct() {
 	content.appendChild(div);
 	doneAttach();
 	delAttach();
-
+	idChange();
 }
 
 
@@ -60,9 +60,14 @@ function delAttach() {
 }
 //删除按钮功能事件
 function delAct() {
-	var r = confirm("确定删除该活动？")
+	var r = confirm("确定删除该活动？");
 	if (r === true) {
+		//清空localStorage中所有键/值对，重新写入
+		localStorage.clear();
 		content.removeChild(this.parentNode);
+		idChange();
+		saveInfo();
+
 	} else {
 		return false;
 	}
@@ -93,10 +98,17 @@ function clearAll() {
 save.addEventListener('click', saveInfo);
 
 function saveInfo() {
-	var input = document.getElementsByTagName('input');
+	var inputs = content.getElementsByTagName('input');
 	//将信息循环存入localStorage
-	for (var i = 0; i < input.length; i++) {
-		localStorage['act' + i] = input[i].value;
+	for (var i = 0; i < inputs.length; i++) {
+		localStorage['act' + i] = inputs[i].value;
 	}
+}
 
+//动态改变input的id值
+function idChange() {
+	var inputs = content.getElementsByTagName('input');
+	for (var i = 0; i < inputs.length; i++) {
+		inputs[i].setAttribute("id", "act" + i);
+	}
 }
