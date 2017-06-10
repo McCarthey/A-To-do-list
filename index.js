@@ -78,8 +78,10 @@ function doneAct() {
 	var input = this.parentNode.firstChild;
 	if (input.className !== 'inputDone') {
 		input.className = "inputDone";
+		input.setAttribute("disabled", "disabled");
 	} else {
 		input.className = " ";
+		input.removeAttribute("disabled");
 	}
 }
 
