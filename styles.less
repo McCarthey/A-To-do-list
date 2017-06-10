@@ -5,6 +5,7 @@
 @danger-red-active:#c9302c;
 @primary-blue:#337ab7;
 @primary-blue-active:#286090;
+@second-blue:#3bb4f2;
 //font
 @uni-font-size:24px;
 @header-font-size:40px;
@@ -13,6 +14,19 @@
 }
 button{
 	border-radius: 4px;
+	border: 1px solid transparent;
+	margin-right: 10px;
+	cursor: pointer;
+	transition: background-color .3s ease-out,border-color .3s ease-out;
+
+}
+input[type='text']{
+	border: 1px solid #eee;
+	transition: border-color .3s ease-out;
+}
+input[type='text']:focus{
+	border:1px solid @second-blue;
+	box-shadow: 1px 1px lighten(@second-blue,30%);
 }
 #container{
 	background-color:#fff;
@@ -28,33 +42,33 @@ button{
 .done{
 	color: #fff;
   	background-color: @success-green;
-  	border-color: #4cae4c;
+  	border-color: @success-green;
 }
 #newAct:active,
 .done:active{
 	color: #fff;
   	background-color: @success-green-active;
-  	border-color: #398439;
+  	border-color: @success-green-active;
 }
 #clear,
 .delete{
 	color: #fff;
   	background-color: @danger-red;
-  	border-color: #d43f3a;
+  	border-color: @danger-red;
 }
 #clear:active,
 .delete:active{
 	color: #fff;
   	background-color: @danger-red-active;
-  	border-color: #ac2925;
+  	border-color: @danger-red-active;
 }
 #save{
 	color: #fff;
   	background-color: @primary-blue;
-  	border-color: #2e6da4;
+  	border-color: @primary-blue;
 }
 #save:hover{
 	color: #fff;
   	background-color: @primary-blue-active;
-  	border-color: #204d74;
+  	border-color: @primary-blue-active;
 }
