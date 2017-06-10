@@ -27,14 +27,17 @@ input[type='text']{
 	border: 1px solid #eee;
 	padding: 0 10px 0 10px;
 	margin: 10px;
-	min-width: 400px;
 	line-height: 2rem;
+	flex-grow:10;
 	transition: border-color .3s ease-out;
 }
 input[type='text']:focus{
 	border:1px solid @second-blue;
-	box-shadow: 1px 1px lighten(@second-blue,3
-		0%);
+	box-shadow: 2px 2px lighten(@second-blue,30%);
+}
+.inputDone{
+	color: #ccc;
+	text-decoration: line-through;
 }
 #container{
 	background-color:#fff;
@@ -44,6 +47,7 @@ input[type='text']:focus{
 }
 #newAct,
 .done{
+	flex-grow:1;
 	color: #fff;
   	background-color: @success-green;
   	border-color: @success-green;
@@ -58,6 +62,7 @@ input[type='text']:focus{
 }
 #clear,
 .delete{
+	flex-grow:1;
 	color: #fff;
   	background-color: @danger-red;
   	border-color: @danger-red;
@@ -80,4 +85,12 @@ input[type='text']:focus{
 	color: #fff;
   	background-color: @primary-blue-active;
   	border-color: @primary-blue-active;
+}
+
+
+//布局
+.box{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
 }

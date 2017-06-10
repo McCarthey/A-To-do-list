@@ -21,6 +21,7 @@ newAct.addEventListener('click', addNewAct);
 function addNewAct() {
 	//动态创建活动及其按钮
 	var div = document.createElement('div');
+	div.setAttribute("class", "box");
 	var typeArea = document.createElement('input');
 	typeArea.setAttribute("type", "text");
 	typeArea.setAttribute("class", "typeArea");
@@ -74,8 +75,12 @@ function delAct() {
 }
 //完成按钮功能事件
 function doneAct() {
-	this.parentNode.firstChild.value = "完成咯";
-
+	var input = this.parentNode.firstChild;
+	if (input.className !== 'inputDone') {
+		input.className = "inputDone";
+	} else {
+		input.className = " ";
+	}
 }
 
 //清空按钮功能事件
