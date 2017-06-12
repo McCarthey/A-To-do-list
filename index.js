@@ -4,12 +4,14 @@ window.onload = function() {
 		addNewAct();
 		document.getElementsByTagName('input')[i].value = localStorage['act' + i];
 	}
+	total();
 
 }
 
 //定义几个常用的全局变量
-var newAct = document.getElementById('newAct');
+var header = document.getElementById('header');
 var content = document.getElementById('content');
+var newAct = document.getElementById('newAct');
 var save = document.getElementById('save');
 var clear = document.getElementById('clear');
 //初始化按钮数组
@@ -21,7 +23,6 @@ newAct.addEventListener('click', addNewAct);
 function addNewAct() {
 	//动态创建活动及其按钮
 	var div = document.createElement('div');
-	div.setAttribute("class", "box");
 	var typeArea = document.createElement('input');
 	typeArea.setAttribute("type", "text");
 	typeArea.setAttribute("class", "typeArea");
@@ -42,6 +43,7 @@ function addNewAct() {
 	doneAttach();
 	delAttach();
 	idChange();
+	stripColor();
 }
 
 
@@ -68,7 +70,7 @@ function delAct() {
 		content.removeChild(this.parentNode);
 		idChange();
 		saveInfo();
-
+		stripColor();
 	} else {
 		return false;
 	}
@@ -83,6 +85,7 @@ function doneAct() {
 		input.className = " ";
 		input.removeAttribute("disabled");
 	}
+	total();
 }
 
 //清空按钮功能事件
@@ -99,6 +102,7 @@ function clearAll() {
 	} else {
 		return false;
 	}
+	total();
 }
 
 //保存按钮功能事件
@@ -108,8 +112,9 @@ function saveInfo() {
 	var inputs = content.getElementsByTagName('input');
 	//将信息循环存入localStorage
 	for (var i = 0; i < inputs.length; i++) {
-		localStorage['act' + i] = inputs[i].value;
+		localStorage['act' + i] = inputs[i].value.trim();
 	}
+	total();
 }
 
 //动态改变input的id值
@@ -118,4 +123,33 @@ function idChange() {
 	for (var i = 0; i < inputs.length; i++) {
 		inputs[i].setAttribute("id", "act" + i);
 	}
+}
+
+//斑马背景色
+function stripColor() {
+	var divs = content.childNodes;
+	for (var i = 0; i < divs.length; i++) {
+		var id = divs[i].firstChild.getAttribute('id');
+		//取出id中的纯数字部分
+		var id = id.split('act');
+		//此时id为['','number'],故应使用id[1]
+		if (id[1] % 2 !== 1) {
+			divs[i].setAttribute('class', 'box');
+		} else {
+			divs[i].setAttribute('class', 'box-strip');
+		}
+	}
+}
+
+//统计待办事项数目
+function total() {
+	var total = 0;
+	var divs = content.childNodes;
+	for (var i = 0; i < divs.length; i++) {
+		var input = divs[i].firstChild;
+		if (input.tagName.toLowerCase() === 'input' && input.value.trim() !== '' && input.getAttribute('disabled') !== 'disabled') {
+			total++;
+		}
+	}
+	header.innerHTML = "You have " + total + " things to do";
 }
