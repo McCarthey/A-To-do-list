@@ -1,12 +1,14 @@
 //页面加载后读取localStorage中的信息
 window.onload = function() {
-	for (var i = 0; i < localStorage.length; i++) {
+	var list = JSON.parse(localStorage.mc_to_do_list); //这里list是对象 不是数组 注意遍历方式 （我可真蠢）
+	for (var i in list) {
 		addNewAct();
-		var obj = JSON.parse(localStorage['act' + i]);
-		document.getElementsByTagName('input')[i].value = obj.taskName;
+		var obj = list[i]; //i是键名actX
+		var number = i.split('act')[1]; //取出键名中的数字部分
+		document.getElementsByTagName('input')[number].value = obj.taskName;
 		if (obj.taskDone === 'disabled') {
-			document.getElementsByTagName('input')[i].setAttribute('disabled', obj.taskDone);
-			document.getElementsByTagName('input')[i].className = "inputDone";
+			document.getElementsByTagName('input')[number].setAttribute('disabled', obj.taskDone);
+			document.getElementsByTagName('input')[number].className = "inputDone";
 		}
 	}
 	total();
@@ -85,7 +87,7 @@ function delAct() {
 	}
 	if (r === true) {
 		//清空localStorage中所有键/值对，重新写入
-		localStorage.clear();
+		localStorage.removeItem("mc_to_do_list");
 		content.removeChild(this.parentNode);
 		idChange();
 		saveInfo();
@@ -120,7 +122,7 @@ function clearAll() {
 		while (content.hasChildNodes()) //当content下还存在子节点时 循环继续
 		{
 			content.removeChild(content.firstChild);
-			localStorage.clear();
+			localStorage.removeItem("mc_to_do_list");
 		}
 	} else {
 		return false;
@@ -133,15 +135,17 @@ save.addEventListener('click', saveInfo);
 
 function saveInfo() {
 	var inputs = content.getElementsByTagName('input');
-
+	var list = {};
 	//将信息循环存入localStorage
 	for (var i = 0; i < inputs.length; i++) {
 		var task = {
 			taskName: inputs[i].value.trim(),
 			taskDone: inputs[i].getAttribute('disabled')
 		};
-		localStorage['act' + i] = JSON.stringify(task);
+		list['act' + i] = task;
+		//localStorage['act' + i] = JSON.stringify(task);
 	}
+	localStorage.mc_to_do_list = JSON.stringify(list);
 	total();
 }
 
