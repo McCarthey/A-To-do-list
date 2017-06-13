@@ -74,7 +74,11 @@ function delAttach() {
 }
 //删除按钮功能事件
 function delAct() {
-	var r = confirm("确定删除该活动？");
+	if (lang === 'zh') {
+		var r = confirm("确定删除该活动？");
+	} else {
+		var r = confirm("Delete this task?");
+	}
 	if (r === true) {
 		//清空localStorage中所有键/值对，重新写入
 		localStorage.clear();
@@ -103,7 +107,11 @@ function doneAct() {
 clear.addEventListener('click', clearAll);
 
 function clearAll() {
-	var r = confirm("是否清空任务？")
+	if (lang === 'zh') {
+		var r = confirm("是否清空任务？");
+	} else {
+		var r = confirm("Clear all the tasks?");
+	}
 	if (r === true) {
 		while (content.hasChildNodes()) //当content下还存在子节点时 循环继续
 		{
