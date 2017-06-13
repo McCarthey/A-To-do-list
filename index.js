@@ -9,7 +9,10 @@ window.onload = function() {
 }
 
 //定义几个常用的全局变量
+var lang = "zh";
 var header = document.getElementById('header');
+var totalNumber = document.getElementById('totalNumber');
+var changeLang = document.getElementById('changeLang');
 var content = document.getElementById('content');
 var newAct = document.getElementById('newAct');
 var save = document.getElementById('save');
@@ -27,11 +30,19 @@ function addNewAct() {
 	typeArea.setAttribute("type", "text");
 	typeArea.setAttribute("class", "typeArea");
 	var button1 = document.createElement('button');
-	var txt1 = document.createTextNode('完成');
+	if (lang === 'en') {
+		var txt1 = document.createTextNode('Done');
+	} else {
+		var txt1 = document.createTextNode('完成');
+	}
 	button1.setAttribute("type", "button");
 	button1.setAttribute("class", "done");
 	var button2 = document.createElement('button');
-	var txt2 = document.createTextNode('删除');
+	if (lang === 'en') {
+		var txt2 = document.createTextNode('Delete');
+	} else {
+		var txt2 = document.createTextNode('删除');
+	}
 	button2.setAttribute("type", "button");
 	button2.setAttribute("class", "delete");
 	div.appendChild(typeArea);
@@ -151,5 +162,44 @@ function total() {
 			total++;
 		}
 	}
-	header.innerHTML = "You have " + total + " things to do";
+	if (lang === 'zh') {
+		totalNumber.innerHTML = "您有" + total + "件事要做";
+	} else {
+		totalNumber.innerHTML = "You have " + total + " things to do"
+	}
+
+}
+
+//改变语言按钮事件
+changeLang.addEventListener('click', changeLanguage);
+
+function changeLanguage() {
+	if (lang === 'zh') {
+		lang = 'en';
+		changeLang.innerText = "English";
+		newAct.innerText = 'New Activity';
+		save.innerText = 'Save';
+		clear.innerText = 'Clear';
+		var divs = content.childNodes;
+		for (var i = 0; i < divs.length; i++) {
+			var done = divs[i].firstChild.nextSibling;
+			done.innerText = 'Done';
+			done.nextSibling.innerText = 'Delete';
+		}
+		total();
+	} else {
+		lang = 'zh';
+		changeLang.innerText = "中文";
+		newAct.innerText = '新建活动';
+		save.innerText = '保存';
+		clear.innerText = '清空';
+		var divs = content.childNodes;
+		for (var i = 0; i < divs.length; i++) {
+			var done = divs[i].firstChild.nextSibling;
+			done.innerText = '完成';
+			done.nextSibling.innerText = '删除';
+		}
+		total();
+	}
+
 }

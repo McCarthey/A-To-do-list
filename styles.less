@@ -9,7 +9,7 @@
 @strip-grey:#eee;
 //font
 @uni-font-size:18px;
-@header-font-size:40px;
+@header-font-size:30px;
 *{
 	font-size: @uni-font-size;
 }
@@ -46,12 +46,18 @@ input[type='text']:focus{
 #container{
 	background-color:#fff;
 }
-#header{
+//头部header
+#totalNumber{
+	display: inline;
 	font-size: @header-font-size;
+	flex-grow:1;
 }
+#changeLang{
+	align-self:flex-end;
+}
+
 #newAct,
 .done{
-	flex-grow:0;
 	color: #fff;
   	background-color: @success-green;
   	border-color: @success-green;
@@ -66,7 +72,6 @@ input[type='text']:focus{
 }
 #clear,
 .delete{
-	flex-grow:0;
 	color: #fff;
   	background-color: @danger-red;
   	border-color: @danger-red;
@@ -80,6 +85,7 @@ input[type='text']:focus{
   	border-color: @danger-red-active;
 }
 #save{
+	align-self:flex-end;
 	color: #fff;
   	background-color: @primary-blue;
   	border-color: @primary-blue;
@@ -97,6 +103,7 @@ input[type='text']:focus{
 	display:flex;
 	flex-direction:row;
 	flex-wrap:wrap;
+	justify-content:flex-start;
 }
 .box-strip{
 	background-color: @strip-grey;
