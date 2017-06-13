@@ -165,7 +165,11 @@ function total() {
 	if (lang === 'zh') {
 		totalNumber.innerHTML = "您有" + total + "件事要做";
 	} else {
-		totalNumber.innerHTML = "You have " + total + " things to do"
+		if (total <= 1) {
+			totalNumber.innerHTML = total + " task to do";
+		} else {
+			totalNumber.innerHTML = total + " tasks to do";
+		}
 	}
 
 }
