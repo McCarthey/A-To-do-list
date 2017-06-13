@@ -6,6 +6,7 @@ window.onload = function() {
 		document.getElementsByTagName('input')[i].value = obj.taskName;
 		if (obj.taskDone === 'disabled') {
 			document.getElementsByTagName('input')[i].setAttribute('disabled', obj.taskDone);
+			document.getElementsByTagName('input')[i].className = "inputDone";
 		}
 	}
 	total();
