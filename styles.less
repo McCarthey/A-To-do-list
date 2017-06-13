@@ -10,6 +10,8 @@
 //font
 @uni-font-size:14px;
 @header-font-size:26px;
+@lg-font-size:20px;
+@lg-header-font-size:40px;
 *{
 	font-size: @uni-font-size;
 }
@@ -119,4 +121,16 @@ input[type='text']:focus{
     input[type="text"]{
     	min-width: 260px;
     }
+}
+
+//针对屏幕大于等于1080 进行优化
+@media screen and(min-width:1080px){
+	*{
+		font-size: @lg-font-size;
+	}
+	#totalNumber{
+		display: inline;
+		font-size: @lg-header-font-size;
+		flex-grow:1;
+	}
 }
