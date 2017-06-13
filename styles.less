@@ -113,3 +113,10 @@ input[type='text']:focus{
 	background-color: @strip-grey;
 	.box;
 }
+
+//针对屏幕小于等于320 进行优化
+@media screen and (max-width: 320px) {
+    input[type="text"]{
+    	min-width: 260px;
+    }
+}
