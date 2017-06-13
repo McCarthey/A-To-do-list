@@ -2,10 +2,13 @@
 window.onload = function() {
 	for (var i = 0; i < localStorage.length; i++) {
 		addNewAct();
-		document.getElementsByTagName('input')[i].value = localStorage['act' + i];
+		var obj = JSON.parse(localStorage['act' + i]);
+		document.getElementsByTagName('input')[i].value = obj.taskName;
+		if (obj.taskDone === 'disabled') {
+			document.getElementsByTagName('input')[i].setAttribute('disabled', obj.taskDone);
+		}
 	}
 	total();
-
 }
 
 //定义几个常用的全局变量
@@ -129,9 +132,14 @@ save.addEventListener('click', saveInfo);
 
 function saveInfo() {
 	var inputs = content.getElementsByTagName('input');
+
 	//将信息循环存入localStorage
 	for (var i = 0; i < inputs.length; i++) {
-		localStorage['act' + i] = inputs[i].value.trim();
+		var task = {
+			taskName: inputs[i].value.trim(),
+			taskDone: inputs[i].getAttribute('disabled')
+		};
+		localStorage['act' + i] = JSON.stringify(task);
 	}
 	total();
 }
