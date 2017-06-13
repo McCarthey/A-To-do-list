@@ -1,17 +1,21 @@
 //页面加载后读取localStorage中的信息
 window.onload = function() {
-	var list = JSON.parse(localStorage.mc_to_do_list); //这里list是对象 不是数组 注意遍历方式 （我可真蠢）
-	for (var i in list) {
-		addNewAct();
-		var obj = list[i]; //i是键名actX
-		var number = i.split('act')[1]; //取出键名中的数字部分
-		document.getElementsByTagName('input')[number].value = obj.taskName;
-		if (obj.taskDone === 'disabled') {
-			document.getElementsByTagName('input')[number].setAttribute('disabled', obj.taskDone);
-			document.getElementsByTagName('input')[number].className = "inputDone";
+	if (!localStorage.mc_to_do_list) { //检测localStorage中是否存在mc_to_do_list，否则控制台会报错（虽然没啥大影响）
+		total();
+	} else {
+		var list = JSON.parse(localStorage.mc_to_do_list); //这里list是对象 不是数组 注意遍历方式 （我可真蠢）
+		for (var i in list) {
+			addNewAct();
+			var obj = list[i]; //i是键名actX
+			var number = i.split('act')[1]; //取出键名中的数字部分
+			document.getElementsByTagName('input')[number].value = obj.taskName;
+			if (obj.taskDone === 'disabled') {
+				document.getElementsByTagName('input')[number].setAttribute('disabled', obj.taskDone);
+				document.getElementsByTagName('input')[number].className = "inputDone";
+			}
 		}
+		total();
 	}
-	total();
 }
 
 //定义几个常用的全局变量
