@@ -39,7 +39,7 @@ function addNewAct() {
 	button1.setAttribute("class", "done");
 	var button2 = document.createElement('button');
 	if (lang === 'en') {
-		var txt2 = document.createTextNode('Delete');
+		var txt2 = document.createTextNode('Del');
 	} else {
 		var txt2 = document.createTextNode('删除');
 	}
@@ -196,7 +196,7 @@ function changeLanguage() {
 		for (var i = 0; i < divs.length; i++) {
 			var done = divs[i].firstChild.nextSibling;
 			done.innerText = 'Done';
-			done.nextSibling.innerText = 'Delete';
+			done.nextSibling.innerText = 'Del';
 		}
 		total();
 	} else {
