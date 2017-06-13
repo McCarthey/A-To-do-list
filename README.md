@@ -5,3 +5,5 @@ https://mccarthey.github.io/A-To-do-list/
 
 
 _You'd better click the **save** button to create a data set in your browser localStorage when you first use it._
+
+**Highly recommend using it on your phone or any other mobile devices** XD
