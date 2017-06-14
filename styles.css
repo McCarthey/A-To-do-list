@@ -33,6 +33,10 @@ input[type='text']:focus {
 #container {
   background-color: #fff;
 }
+#container {
+  max-width: 800px;
+  margin: 20px auto;
+}
 #header {
   margin-bottom: 8px;
 }
@@ -103,6 +107,15 @@ input[type='text']:focus {
     min-width: 260px;
   }
 }
+@media screen and (min-width: 360px) {
+  #container {
+    max-width: 800px;
+    margin: 20 auto;
+    border: 1px solid #ddd;
+    padding: 20px 10px;
+    box-shadow: 6px 6px 30px #f7f7f7;
+  }
+}
 @media screen and (min-width: 960px) {
   * {
     font-size: 16px;
@@ -114,6 +127,9 @@ input[type='text']:focus {
   }
   #container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
+    border: 1px solid #ddd;
+    padding: 40px 20px;
+    box-shadow: 6px 6px 30px #f7f7f7;
   }
 }
