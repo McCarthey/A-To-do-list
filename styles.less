@@ -9,9 +9,9 @@
 @strip-grey:#f7f7f7;
 //font
 @uni-font-size:14px;
-@header-font-size:26px;
-@lg-font-size:20px;
-@lg-header-font-size:40px;
+@header-font-size:24px;
+@lg-font-size:16px;
+@lg-header-font-size:30px;
 *{
 	font-size: @uni-font-size;
 }
@@ -124,7 +124,7 @@ input[type='text']:focus{
 }
 
 //针对屏幕大于等于1080 进行优化
-@media screen and(min-width:1280px){
+@media screen and(min-width:960px){
 	*{
 		font-size: @lg-font-size;
 	}
@@ -132,5 +132,9 @@ input[type='text']:focus{
 		display: inline;
 		font-size: @lg-header-font-size;
 		flex-grow:1;
+	}
+	#container{
+		max-width: 800px;
+		margin:0 auto;
 	}
 }
