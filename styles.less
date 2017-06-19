@@ -12,7 +12,7 @@
 @header-font-size:24px;
 @lg-font-size:16px;
 @lg-header-font-size:30px;
-@footer-font-size:12px;
+@copyright-font-size:12px;
 *{
 	font-size: @uni-font-size;
 }
@@ -110,13 +110,30 @@ input[type='text']:focus{
 }
 //尾部
 #footer{
-	color: #aaa;
-	font-size: @footer-font-size;
 	text-align: center;
+}
+.footer-item{
+	display:inline-block;
+	vertical-align: middle;
+}
+#githubFork{
+	width: 24px; 
+	height: 24px;
+	background: url(footer_ico-github.svg) center no-repeat;
+	background-color: transparent;
+    background-size: contain;
+    opacity: .46;
+    cursor: pointer;
+}
+#copyright{
+	color: #aaa;
+	font-size: @copyright-font-size;
+	text-align: center;
+	margin:0 auto;
 }
 #currentYear{
 	color: #aaa;
-	font-size: @footer-font-size;	
+	font-size: @copyright-font-size;	
 }
 
 //布局

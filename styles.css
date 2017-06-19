@@ -90,9 +90,26 @@ input[type='text']:focus {
   border-color: #286090;
 }
 #footer {
+  text-align: center;
+}
+.footer-item {
+  display: inline-block;
+  vertical-align: middle;
+}
+#githubFork {
+  width: 24px;
+  height: 24px;
+  background: url(footer_ico-github.svg) center no-repeat;
+  background-color: transparent;
+  background-size: contain;
+  opacity: .46;
+  cursor: pointer;
+}
+#copyright {
   color: #aaa;
   font-size: 12px;
   text-align: center;
+  margin: 0 auto;
 }
 #currentYear {
   color: #aaa;
