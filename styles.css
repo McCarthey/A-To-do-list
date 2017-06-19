@@ -12,6 +12,7 @@ button {
   cursor: pointer;
   line-height: 2rem;
   text-align: center;
+  -webkit-transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
   transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 input[type='text'] {
@@ -19,12 +20,16 @@ input[type='text'] {
   padding: 0 6px;
   margin: 10px 4px;
   line-height: 2rem;
-  flex-grow: 20;
+  -webkit-box-flex: 20;
+      -ms-flex-positive: 20;
+          flex-grow: 20;
+  -webkit-transition: border-color 0.3s ease-out;
   transition: border-color 0.3s ease-out;
 }
 input[type='text']:focus {
   border: 1px solid #3bb4f2;
-  box-shadow: 2px 2px #caebfc;
+  -webkit-box-shadow: 2px 2px #caebfc;
+          box-shadow: 2px 2px #caebfc;
 }
 .inputDone {
   color: #ccc;
@@ -44,10 +49,13 @@ input[type='text']:focus {
 #totalNumber {
   display: inline;
   font-size: 24px;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 #changeLang {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin: 0 10px 0 10px;
 }
 #newAct,
@@ -84,7 +92,8 @@ input[type='text']:focus {
   background-size: contain;
 }
 #save {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
@@ -122,56 +131,118 @@ input[type='text']:focus {
   font-size: 12px;
 }
 .box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 .box-out {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 .right-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
   justigy-content: flex-end;
 }
 .box-strip {
   background-color: #f7f7f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+}
+@-webkit-keyframes flyin {
+  from {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
 }
 @keyframes flyin {
   from {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
   to {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
 }
 .flyin {
-  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+}
+@-webkit-keyframes flyout {
+  from {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
 }
 @keyframes flyout {
   from {
-    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   to {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 .flyout {
-  animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  -webkit-animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+          animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 @media screen and (max-width: 320px) {
   input[type="text"] {
@@ -197,14 +268,17 @@ input[type='text']:focus {
   #totalNumber {
     display: inline;
     font-size: 30px;
-    flex-grow: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
   }
   #container {
     max-width: 800px;
     margin: 40px auto;
     border: 1px solid #ddd;
     padding: 40px 20px;
-    box-shadow: 6px 6px 30px #f7f7f7;
+    -webkit-box-shadow: 6px 6px 30px #f7f7f7;
+            box-shadow: 6px 6px 30px #f7f7f7;
   }
   .top-this {
     height: 34px;
