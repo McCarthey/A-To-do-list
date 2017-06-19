@@ -77,6 +77,10 @@ input[type='text']:focus {
   background-color: #c9302c;
   border-color: #c9302c;
 }
+.top-this {
+  background: url(top2.svg) center no-repeat;
+  background-size: contain;
+}
 #save {
   align-self: flex-end;
   color: #fff;

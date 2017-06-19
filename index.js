@@ -59,14 +59,19 @@ function addNewAct() {
 	}
 	button2.setAttribute("type", "button");
 	button2.setAttribute("class", "delete");
+	var button3 = document.createElement('button');
+	button3.setAttribute("type", "button");
+	button3.setAttribute("class", "top-this");
 	div.appendChild(typeArea);
 	div.appendChild(button1);
 	button1.appendChild(txt1);
 	div.appendChild(button2);
 	button2.appendChild(txt2);
+	div.appendChild(button3);
 	content.appendChild(div);
 	doneAttach();
 	delAttach();
+	topAttach();
 	idChange();
 	stripColor();
 }
@@ -86,6 +91,13 @@ function delAttach() {
 		delBtn[i].addEventListener('click', delAct);
 	}
 }
+//每次创建新活动时重新获取‘置顶按钮’数组，并重新绑定topAct事件
+function topAttach() {
+	var topBtn = document.getElementsByClassName('top-this');
+	for (var k = 0; k < topBtn.length; k++) {
+		topBtn[k].addEventListener('click', topAct);
+	}
+}
 //删除按钮功能事件
 function delAct() {
 	if (lang === 'zh') {
@@ -94,11 +106,8 @@ function delAct() {
 		var r = confirm("Delete this task?");
 	}
 	if (r === true) {
-		//清空localStorage中所有键/值对，重新写入
-		localStorage.removeItem("mc_to_do_list");
 		content.removeChild(this.parentNode);
 		idChange();
-		saveInfo();
 		stripColor();
 	} else {
 		return false;
@@ -116,7 +125,17 @@ function doneAct() {
 	}
 	total();
 }
-
+//置顶按钮功能事件
+function topAct() {
+	var div = this.parentNode.cloneNode(true);
+	var returnedNode = content.insertBefore(div, content.firstChild);
+	content.removeChild(this.parentNode);
+	doneAttach();
+	delAttach();
+	topAttach();
+	idChange();
+	stripColor();
+}
 //清空按钮功能事件
 clear.addEventListener('click', clearAll);
 
