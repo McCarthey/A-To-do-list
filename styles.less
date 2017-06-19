@@ -98,7 +98,7 @@ input[type='text']:focus{
 }
 .top-this{
 	height: 30px;
-	background:url(top2.svg) center no-repeat;
+	background:url(top.svg) center no-repeat;
 	background-size: contain;
 }
 #save{
@@ -158,6 +158,20 @@ input[type='text']:focus{
     input[type="text"]{
     	min-width: 260px;
     }
+}
+@media screen and(max-width:640px) {
+	.done{
+		height: 30px;
+		max-width: 30px;
+		overflow: hidden;
+		padding: 0 6px;
+	}
+	.delete{
+		height: 30px;
+		max-width: 30px;
+		overflow: hidden;
+		padding: 0 6px;
+	}
 }
 //针对屏幕大于等于1080 进行优化
 @media screen and(min-width:960px){

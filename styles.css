@@ -79,7 +79,7 @@ input[type='text']:focus {
 }
 .top-this {
   height: 30px;
-  background: url(top2.svg) center no-repeat;
+  background: url(top.svg) center no-repeat;
   background-size: contain;
 }
 #save {
@@ -136,6 +136,20 @@ input[type='text']:focus {
 @media screen and (max-width: 320px) {
   input[type="text"] {
     min-width: 260px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .done {
+    height: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    padding: 0 6px;
+  }
+  .delete {
+    height: 30px;
+    max-width: 30px;
+    overflow: hidden;
+    padding: 0 6px;
   }
 }
 @media screen and (min-width: 960px) {
