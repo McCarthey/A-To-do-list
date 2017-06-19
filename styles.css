@@ -78,6 +78,7 @@ input[type='text']:focus {
   border-color: #c9302c;
 }
 .top-this {
+  height: 30px;
   background: url(top2.svg) center no-repeat;
   background-size: contain;
 }
