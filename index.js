@@ -1,5 +1,21 @@
+//定义几个常用的全局变量
+var lang = "zh";
+var header = document.getElementById('header');
+var totalNumber = document.getElementById('totalNumber');
+var changeLang = document.getElementById('changeLang');
+var content = document.getElementById('content');
+var newAct = document.getElementById('newAct');
+var save = document.getElementById('save');
+var clear = document.getElementById('clear');
+var currentYear = document.getElementById('currentYear');
+//初始化按钮数组
+doneAttach();
+delAttach();
+
 //页面加载后读取localStorage中的信息
 window.onload = function() {
+	var today = new Date();
+	currentYear.innerHTML = today.getFullYear();
 	if (!localStorage.mc_to_do_list) { //检测localStorage中是否存在mc_to_do_list，否则控制台会报错（虽然没啥大影响）
 		total();
 	} else {
@@ -18,18 +34,6 @@ window.onload = function() {
 	}
 }
 
-//定义几个常用的全局变量
-var lang = "zh";
-var header = document.getElementById('header');
-var totalNumber = document.getElementById('totalNumber');
-var changeLang = document.getElementById('changeLang');
-var content = document.getElementById('content');
-var newAct = document.getElementById('newAct');
-var save = document.getElementById('save');
-var clear = document.getElementById('clear');
-//初始化按钮数组
-doneAttach();
-delAttach();
 //添加按钮功能事件
 newAct.addEventListener('click', addNewAct);
 
