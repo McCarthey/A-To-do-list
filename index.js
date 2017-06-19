@@ -40,6 +40,7 @@ newAct.addEventListener('click', addNewAct);
 function addNewAct() {
 	//动态创建活动及其按钮
 	var div = document.createElement('div');
+	div.setAttribute('class', 'box');
 	var typeArea = document.createElement('input');
 	typeArea.setAttribute("type", "text");
 	typeArea.setAttribute("class", "typeArea");
@@ -106,9 +107,18 @@ function delAct() {
 		var r = confirm("Delete this task?");
 	}
 	if (r === true) {
-		content.removeChild(this.parentNode);
-		idChange();
-		stripColor();
+		var div = this.parentNode;
+		addClass(div, 'box-out');
+		div.addEventListener('animationend', function() {
+			content.removeChild(div);
+			idChange();
+			stripColor();
+		});
+		div.addEventListener('webkitAnimationEnd', function() {
+			content.removeChild(div);
+			idChange();
+			stripColor();
+		});
 	} else {
 		return false;
 	}
@@ -194,9 +204,9 @@ function stripColor() {
 		var id = id.split('act');
 		//此时id为['','number'],故应使用id[1]
 		if (id[1] % 2 !== 1) {
-			divs[i].setAttribute('class', 'box');
+			divs[i].style.backgroundColor = '#fff';
 		} else {
-			divs[i].setAttribute('class', 'box-strip');
+			divs[i].style.backgroundColor = '#f7f7f7';
 		}
 	}
 }

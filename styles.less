@@ -181,14 +181,14 @@ input[type='text']:focus{
 //飞出动画
 @keyframes flyout{
 	from {
-		transform: translateX();
+		transform: translateX(0%);
 	}
 	to{
 		transform: translateX(100%);
 	}
 }
 .flyout{
-	animation:flyout 0.2s linear;
+	animation:flyout 0.3s cubic-bezier(.2,.45,.85,.64);
 }
 
 //针对屏幕小于等于320 进行优化
