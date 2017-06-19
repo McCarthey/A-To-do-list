@@ -32,6 +32,7 @@ input[type='text']:focus {
 }
 #container {
   background-color: #fff;
+  overflow: hidden;
 }
 #container {
   max-width: 800px;
@@ -125,12 +126,21 @@ input[type='text']:focus {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  animation: flyin 0.3s cubic-bezier(0.2, 0.45, 0.85, 0.64);
+}
+.box-out {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation: flyout 0.2s linear;
 }
 .right-box {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  animation: flyin 0.3s cubic-bezier(0.2, 0.45, 0.85, 0.64);
   justigy-content: flex-end;
 }
 .box-strip {
@@ -139,6 +149,29 @@ input[type='text']:focus {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
+  animation: flyin 0.3s cubic-bezier(0.2, 0.45, 0.85, 0.64);
+}
+@keyframes flyin {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+.flyin {
+  animation: flyin 0.3s cubic-bezier(0.2, 0.45, 0.85, 0.64);
+}
+@keyframes flyout {
+  from {
+    transform: translateX();
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+.flyout {
+  animation: flyout 0.2s linear;
 }
 @media screen and (max-width: 320px) {
   input[type="text"] {

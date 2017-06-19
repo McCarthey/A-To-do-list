@@ -200,6 +200,17 @@ function stripColor() {
 		}
 	}
 }
+//追加class属性
+function addClass(elem, value) {
+	if (!elem.className) {
+		elem.className = value;
+	} else {
+		newClassName = elem.className;
+		newClassName += " ";
+		newClassName += value;
+		elem.className = newClassName;
+	}
+}
 
 //统计待办事项数目
 function total() {

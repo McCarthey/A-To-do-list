@@ -48,6 +48,7 @@ input[type='text']:focus{
 }
 #container{
 	background-color:#fff;
+	overflow: hidden;
 }
 //整个容器
 #container{
@@ -147,6 +148,14 @@ input[type='text']:focus{
 	flex-direction:row;
 	flex-wrap:wrap;
 	justify-content:flex-start;
+	.flyin;
+}
+.box-out{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+	.flyout;
 }
 .right-box{
 	.box;
@@ -155,6 +164,31 @@ input[type='text']:focus{
 .box-strip{
 	background-color: @strip-grey;
 	.box;
+}
+
+//飞入动画
+@keyframes flyin{
+	from {
+		transform: translateX(100%);
+	}
+	to{
+		transform: translateX(0%);
+	}
+}
+.flyin{
+	animation:flyin 0.3s cubic-bezier(.2,.45,.85,.64);
+}
+//飞出动画
+@keyframes flyout{
+	from {
+		transform: translateX();
+	}
+	to{
+		transform: translateX(100%);
+	}
+}
+.flyout{
+	animation:flyout 0.2s linear;
 }
 
 //针对屏幕小于等于320 进行优化
