@@ -135,6 +135,7 @@ function topAct() {
 	topAttach();
 	idChange();
 	stripColor();
+	total();
 }
 //清空按钮功能事件
 clear.addEventListener('click', clearAll);
