@@ -200,20 +200,24 @@ input[type='text']:focus {
   from {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    opacity: 0;
   }
   to {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
 }
 @keyframes flyin {
   from {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    opacity: 0;
   }
   to {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
 }
 .flyin {
@@ -224,20 +228,24 @@ input[type='text']:focus {
   from {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
   to {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    opacity: 0;
   }
 }
 @keyframes flyout {
   from {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
   to {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
+    opacity: 0;
   }
 }
 .flyout {
