@@ -12,7 +12,6 @@ button {
   cursor: pointer;
   line-height: 2rem;
   text-align: center;
-  -webkit-transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
   transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 input[type='text'] {
@@ -20,16 +19,12 @@ input[type='text'] {
   padding: 0 6px;
   margin: 10px 4px;
   line-height: 2rem;
-  -webkit-box-flex: 20;
-      -ms-flex-positive: 20;
-          flex-grow: 20;
-  -webkit-transition: border-color 0.3s ease-out;
+  flex-grow: 20;
   transition: border-color 0.3s ease-out;
 }
 input[type='text']:focus {
   border: 1px solid #3bb4f2;
-  -webkit-box-shadow: 2px 2px #caebfc;
-          box-shadow: 2px 2px #caebfc;
+  box-shadow: 2px 2px #caebfc;
 }
 .inputDone {
   color: #ccc;
@@ -48,13 +43,10 @@ input[type='text']:focus {
 #totalNumber {
   display: inline;
   font-size: 24px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 #changeLang {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   margin: 0 10px 0 10px;
 }
 #newAct,
@@ -91,8 +83,7 @@ input[type='text']:focus {
   background-size: contain;
 }
 #save {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
@@ -130,33 +121,24 @@ input[type='text']:focus {
   font-size: 12px;
 }
 .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.right-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justigy-content: flex-end;
 }
 .box-strip {
   background-color: #f7f7f7;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 @media screen and (max-width: 320px) {
   input[type="text"] {
@@ -182,17 +164,14 @@ input[type='text']:focus {
   #totalNumber {
     display: inline;
     font-size: 30px;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
   }
   #container {
     max-width: 800px;
     margin: 40px auto;
     border: 1px solid #ddd;
     padding: 40px 20px;
-    -webkit-box-shadow: 6px 6px 30px #f7f7f7;
-            box-shadow: 6px 6px 30px #f7f7f7;
+    box-shadow: 6px 6px 30px #f7f7f7;
   }
   .top-this {
     height: 34px;
