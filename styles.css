@@ -12,7 +12,6 @@ button {
   cursor: pointer;
   line-height: 2rem;
   text-align: center;
-  -webkit-transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
   transition: background-color 0.3s ease-out, border-color 0.3s ease-out;
 }
 input[type='text'] {
@@ -20,16 +19,12 @@ input[type='text'] {
   padding: 0 6px;
   margin: 10px 4px;
   line-height: 2rem;
-  -webkit-box-flex: 20;
-      -ms-flex-positive: 20;
-          flex-grow: 20;
-  -webkit-transition: border-color 0.3s ease-out;
+  flex-grow: 20;
   transition: border-color 0.3s ease-out;
 }
 input[type='text']:focus {
   border: 1px solid #3bb4f2;
-  -webkit-box-shadow: 2px 2px #caebfc;
-          box-shadow: 2px 2px #caebfc;
+  box-shadow: 2px 2px #caebfc;
 }
 .inputDone {
   color: #ccc;
@@ -49,13 +44,10 @@ input[type='text']:focus {
 #totalNumber {
   display: inline;
   font-size: 24px;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
 }
 #changeLang {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   margin: 0 10px 0 10px;
 }
 #newAct,
@@ -92,8 +84,7 @@ input[type='text']:focus {
   background-size: contain;
 }
 #save {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
+  align-self: flex-end;
   color: #fff;
   background-color: #337ab7;
   border-color: #337ab7;
@@ -110,6 +101,45 @@ input[type='text']:focus {
 .footer-item {
   display: inline-block;
   vertical-align: middle;
+}
+#btnGroup {
+  display: block;
+}
+#warn {
+  line-height: 2em;
+  color: #aaa;
+  margin: 10px 5px;
+  padding: 0 10px;
+  float: right;
+  position: relative;
+}
+.warn-fade {
+  animation: fade 0.6s ease-in-out;
+}
+@keyframes fade {
+  0% {
+    top: 3px;
+    left: 3px;
+  }
+  25% {
+    color: #3bb4f2;
+    top: 3px;
+    left: -3px;
+  }
+  50% {
+    color: #337ab7;
+    top: -3px;
+    left: 3px;
+  }
+  75% {
+    color: #3bb4f2;
+    top: -3px;
+    left: -3px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
 }
 #githubFork {
   width: 24px;
@@ -131,126 +161,60 @@ input[type='text']:focus {
   font-size: 12px;
 }
 .box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 .box-out {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 .right-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
   justigy-content: flex-end;
 }
 .box-strip {
   background-color: #f7f7f7;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-}
-@-webkit-keyframes flyin {
-  from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
-  }
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 @keyframes flyin {
   from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     opacity: 0;
   }
   to {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     opacity: 1;
   }
 }
 .flyin {
-  -webkit-animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-}
-@-webkit-keyframes flyout {
-  from {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
-    opacity: 0;
-  }
+  animation: flyin 0.6s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 @keyframes flyout {
   from {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
+    transform: translateX(0%);
     opacity: 1;
   }
   to {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    transform: translateX(100%);
     opacity: 0;
   }
 }
 .flyout {
-  -webkit-animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
-          animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
+  animation: flyout 0.3s cubic-bezier(0.4, -0.59, 0.58, 1.55);
 }
 @media screen and (max-width: 320px) {
   input[type="text"] {
@@ -276,17 +240,14 @@ input[type='text']:focus {
   #totalNumber {
     display: inline;
     font-size: 30px;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    flex-grow: 1;
   }
   #container {
     max-width: 800px;
     margin: 40px auto;
     border: 1px solid #ddd;
     padding: 40px 20px;
-    -webkit-box-shadow: 6px 6px 30px #f7f7f7;
-            box-shadow: 6px 6px 30px #f7f7f7;
+    box-shadow: 6px 6px 30px #f7f7f7;
   }
   .top-this {
     height: 34px;

@@ -8,6 +8,7 @@ var newAct = document.getElementById('newAct');
 var save = document.getElementById('save');
 var clear = document.getElementById('clear');
 var currentYear = document.getElementById('currentYear');
+var warn = document.getElementById('warn');
 //初始化按钮数组
 doneAttach();
 delAttach();
@@ -185,6 +186,22 @@ function saveInfo() {
 	}
 	localStorage.mc_to_do_list = JSON.stringify(list);
 	total();
+	//改变warn样式
+	if (lang === 'zh') {
+		warn.innerText = "保存成功";
+	} else {
+		warn.innerText = "It's been saved";
+	}
+	warn.className = 'warn-fade';
+	setTimeout(function() {
+		if (lang === 'zh') {
+			warn.innerText = "记得保存";
+		} else {
+			warn.innerText = "Remember to save";
+		}
+		warn.className = '';
+	}, 600);
+
 }
 
 //动态改变input的id值
@@ -254,6 +271,7 @@ function changeLanguage() {
 		newAct.innerText = 'New Activity';
 		save.innerText = 'Save';
 		clear.innerText = 'Clear';
+		warn.innerText = 'Remember to save';
 		var divs = content.childNodes;
 		for (var i = 0; i < divs.length; i++) {
 			var done = divs[i].firstChild.nextSibling;
@@ -267,6 +285,7 @@ function changeLanguage() {
 		newAct.innerText = '新建活动';
 		save.innerText = '保存';
 		clear.innerText = '清空';
+		warn.innerText = '记得保存';
 		var divs = content.childNodes;
 		for (var i = 0; i < divs.length; i++) {
 			var done = divs[i].firstChild.nextSibling;
