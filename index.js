@@ -74,6 +74,7 @@ function addNewAct() {
 	doneAttach();
 	delAttach();
 	topAttach();
+	blurAttach();
 	idChange();
 	stripColor();
 }
@@ -100,6 +101,13 @@ function topAttach() {
 		topBtn[k].addEventListener('click', topAct);
 	}
 }
+//每次创建新活动时重新获取‘input’数组，当其失去焦点时，调用保存函数
+function blurAttach() {
+	var input = content.getElementsByTagName('input');
+	for (var i = 0; i < input.length; i++) {
+		input[i].addEventListener('blur', saveInfo);
+	}
+}
 //删除按钮功能事件
 function delAct() {
 	if (lang === 'zh') {
@@ -114,11 +122,13 @@ function delAct() {
 			content.removeChild(div);
 			idChange();
 			stripColor();
+			saveInfo();
 		});
 		div.addEventListener('webkitAnimationEnd', function() {
 			content.removeChild(div);
 			idChange();
 			stripColor();
+			saveInfo();
 		});
 	} else {
 		return false;
@@ -146,7 +156,7 @@ function topAct() {
 	topAttach();
 	idChange();
 	stripColor();
-	total();
+	saveInfo();
 }
 //清空按钮功能事件
 clear.addEventListener('click', clearAll);
