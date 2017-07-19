@@ -88,7 +88,7 @@ input[type='text']:focus {
 }
 .top-this {
   height: 30px;
-  background: url(top.svg) center no-repeat;
+  background: url(images/top.svg) center no-repeat;
   background-size: contain;
 }
 #save {
@@ -179,7 +179,7 @@ input[type='text']:focus {
 #githubFork {
   width: 24px;
   height: 24px;
-  background: url(footer_ico-github.svg) center no-repeat;
+  background: url(images/footer_ico-github.svg) center no-repeat;
   background-color: transparent;
   background-size: contain;
   opacity: .46;
