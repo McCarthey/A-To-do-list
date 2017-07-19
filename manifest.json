@@ -5,8 +5,8 @@
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
   "display": "fullscreen",
-  "scope": "/",
-  "start_url": "/",
+  "scope": "/A-To-do-list",
+  "start_url": "/A-To-do-list",
   "icons": [{
     "src": "/icons/android-icon-36x36.png",
     "sizes": "36x36",
