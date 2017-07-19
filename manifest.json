@@ -4,7 +4,7 @@
   "short_name": "A-To-do-list",
   "theme_color": "#2196f3",
   "background_color": "#2196f3",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/A-To-do-list",
   "start_url": "/A-To-do-list",
   "icons": [{
