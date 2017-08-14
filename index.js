@@ -77,6 +77,13 @@ function addNewAct() {
 	blurAttach();
 	idChange();
 	stripColor();
+	//创建动画结束后立即获取焦点
+	div.addEventListener('animationend', function() {
+		this.firstChild.focus();
+	});
+	div.addEventListener('webkitAnimationEnd', function() {
+		this.firstChild.focus();
+	});
 }
 
 
