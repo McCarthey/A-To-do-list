@@ -1,5 +1,6 @@
 //定义几个常用的全局变量
 var lang = "zh";
+var winOnload;
 var header = document.getElementById('header');
 var totalNumber = document.getElementById('totalNumber');
 var changeLang = document.getElementById('changeLang');
@@ -15,6 +16,7 @@ delAttach();
 
 //页面加载后读取localStorage中的信息
 window.onload = function() {
+	winOnload = 1;
 	var today = new Date();
 	currentYear.innerHTML = today.getFullYear();
 	if (!localStorage.mc_to_do_list) { //检测localStorage中是否存在mc_to_do_list，否则控制台会报错（虽然没啥大影响）
@@ -33,6 +35,7 @@ window.onload = function() {
 		}
 		total();
 	}
+	winOnload = 0;
 }
 
 //添加按钮功能事件
@@ -78,12 +81,14 @@ function addNewAct() {
 	idChange();
 	stripColor();
 	//创建动画结束后立即获取焦点
-	div.addEventListener('animationend', function() {
-		this.firstChild.focus();
-	});
-	div.addEventListener('webkitAnimationEnd', function() {
-		this.firstChild.focus();
-	});
+	if (winOnload === 0) {
+		div.addEventListener('animationend', function() {
+			this.firstChild.focus();
+		});
+		div.addEventListener('webkitAnimationEnd', function() {
+			this.firstChild.focus();
+		});
+	}
 }
 
 
