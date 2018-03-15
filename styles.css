@@ -199,6 +199,7 @@ input[type='text']:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  cursor: move;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
