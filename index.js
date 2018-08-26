@@ -14,9 +14,6 @@ var warn = document.getElementById('warn');
 doneAttach();
 delAttach();
 
-//sortable拖动
-var sortable = Sortable.create(content);
-
 //页面加载后读取localStorage中的信息
 window.onload = function() {
 	winOnload = 1;
